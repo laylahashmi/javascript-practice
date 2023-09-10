@@ -318,3 +318,39 @@
 //     return (`${hour}:${min_sec}`)
 // }
 // console.log(timeConversion(s))
+
+//28. There is a collection of input strings and a collection of
+// query strings. For each query string, determine how many times
+// it occurs in the list of input strings. Return an array of the results.
+function matchingStrings(strings, queries) {
+    let results = [];
+    for (let i in queries) {
+        let counter = 0;
+        for (let s in strings) {
+            if (strings[s] == queries[i]) {
+                counter++;
+            }
+        }
+        results.push(counter);
+        }
+    return results;
+ }
+    // const stringOccurences = strings.reduce(function (acc, string) {
+    // return acc[string]? acc[string]++ : acc[string] = 1, acc}, {});
+
+    // // for (let i = 0; i < queries.length; i++) {
+    // //     if (stringOccurences.hasOwnProperty(queries[i])) {
+    // //         results.push(stringOccurences[queries[i]])
+    // //     } else {
+    // //         results.push(0)
+    // //     }
+    // // }
+    // // return results
+
+    // return queries.reduce(function (acc, string) {
+    //     return stringOccurences.hasOwnProperty(string) ?
+    //         acc[string] = stringOccurences[string] : acc[string] = 0, acc}, [])
+
+const strings = ["ab", "ab", "abc"]
+const queries = ["ab", "abc", "ba"]
+console.log(matchingStrings(strings, queries))
