@@ -417,21 +417,39 @@
 // console.log(dayOfYear("2022-05-24"))
 
 //find the missing ODD number
-function missingOddNum(arr) {
-    // let completeArr = [arr[0]];
-    // for (let i = 0; i < arr.length; i++) {
-    //     let value = completeArr[i] + 2;
-    //     completeArr.push(value)
+// function missingOddNum(arr) {
+//     // let completeArr = [arr[0]];
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     let value = completeArr[i] + 2;
+//     //     completeArr.push(value)
+//     // }
+//     // return completeArr.filter((num) => !arr.includes(num))
+//     let missingDigit = [];
+//     for (let i = arr[0]; i <= arr.at(-1); i++) {
+//         if (i % 2 !== 0 && !arr.includes(i)) {
+//             missingDigit.push(i)
+//         }
+//     }
+//     return missingDigit
+// }
+
+// const arr = [5, 7, 11, 13, 15, 17]
+// console.log(missingOddNum(arr))
+
+
+//reverse a string
+function reverseStr(str) {
+    // let words = str.split(" ");
+    // let reversed = [];
+    // for (let word in words) {
+    //     let reversedWord = words[word].split("").reverse().join("")
+    //     reversed.push(reversedWord)
     // }
-    // return completeArr.filter((num) => !arr.includes(num))
-    let missingDigit = [];
-    for (let i = arr[0]; i <= arr.at(-1); i++) {
-        if (i % 2 !== 0 && !arr.includes(i)) {
-            missingDigit.push(i)
-        }
-    }
-    return missingDigit
+    // return reversed.join(" ")
+
+    // //using map function
+    const reversed = str.split(" ").map((word) => word.split("").reverse().join("")).join(" ")
+    return reversed
 }
 
-const arr = [5, 7, 11, 13, 15, 17]
-console.log(missingOddNum(arr))
+console.log(reverseStr("sihT si tpircSavaJ edoC"))
