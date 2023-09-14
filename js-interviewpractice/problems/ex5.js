@@ -4,9 +4,9 @@ const numbers = [1, 2]
 function addToArray (arr, element) {
     return [...arr, element]
 }
-// const newNumbers = addToArray(numbers, "wassup")
-// console.log(newNumbers)
-// console.log(numbers)
+const newNumbers = addToArray(numbers, "wassup")
+console.log(newNumbers)
+console.log(numbers)
 
 
 // Write a function to concatenate two arrays

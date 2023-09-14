@@ -115,7 +115,7 @@
 //         "age": 28
 //     }
 // }
-
+//
 // // const person2 = JSON.parse(JSON.stringify(person1));
 // const person2 = structuredClone(person1)
 // console.log(person1)
@@ -136,12 +136,12 @@
 //     }
 //     return mergedArr
 // }
-
+//
 // console.log(bubbleSort([5, 4, 6], [6, 3, 2]))
 
 //13. Find duplicate elements in a given array
 // const dupArray = [14, 23, 6, 6, 14, 56, 87, 14]
-
+//
 // const duplicates  = dupArray.filter((ele, index, arr) => arr.indexOf(ele) !== index)
 // console.log(duplicates)
 
@@ -319,38 +319,119 @@
 // }
 // console.log(timeConversion(s))
 
-//28. There is a collection of input strings and a collection of
-// query strings. For each query string, determine how many times
-// it occurs in the list of input strings. Return an array of the results.
-function matchingStrings(strings, queries) {
-    let results = [];
-    for (let i in queries) {
-        let counter = 0;
-        for (let s in strings) {
-            if (strings[s] == queries[i]) {
-                counter++;
-            }
+// //28. There is a collection of input strings and a collection of
+// // query strings. For each query string, determine how many times
+// // it occurs in the list of input strings. Return an array of the results.
+// function matchingStrings(strings, queries) {
+//     let results = [];
+//     for (let i in queries) {
+//         let counter = 0;
+//         for (let s in strings) {
+//             if (strings[s] == queries[i]) {
+//                 counter++;
+//             }
+//         }
+//         results.push(counter);
+//         }
+//     return results;
+//  }
+//     // const stringOccurences = strings.reduce(function (acc, string) {
+//     // return acc[string]? acc[string]++ : acc[string] = 1, acc}, {});
+
+//     // // for (let i = 0; i < queries.length; i++) {
+//     // //     if (stringOccurences.hasOwnProperty(queries[i])) {
+//     // //         results.push(stringOccurences[queries[i]])
+//     // //     } else {
+//     // //         results.push(0)
+//     // //     }
+//     // // }
+//     // // return results
+
+//     // return queries.reduce(function (acc, string) {
+//     //     return stringOccurences.hasOwnProperty(string) ?
+//     //         acc[string] = stringOccurences[string] : acc[string] = 0, acc}, [])
+
+// const strings = ["ab", "ab", "abc"]
+// const queries = ["ab", "abc", "ba"]
+// console.log(matchingStrings(strings, queries))
+
+// //29. given an array of integers, where all elements but one occur twice, find
+// // the unique element
+// function lonelyinteger(a) {
+//     return a.filter((item) => a.indexOf(item)===a.lastIndexOf(item))
+
+// //30. every second div needs to be closed
+// const closeSecondDivs = (string) => {
+//     for (let i = 0; i <string.length; i++) {
+//         if (string[i] === '<')
+//     }
+// }
+// closeSecondDivs("Hello")
+
+// //count the number of integers in a string
+// const countIntegers = (string) => string.replace(/[^0-9]/g, '').length
+// console.log(countIntegers("H6h78jde459!"))
+
+// //count the number of vowels in a string
+// const countVowels = (string) => string.replace(/[^aeiou]/gi, '').length
+// console.log(countVowels("Hello World, My Aname is Layla"))
+
+// function changeArray(a) {
+//     const upperCaseArray = a.map(item => item.toUpperCase());
+//     return upperCaseArray.sort()
+// }
+
+// console.log(changeArray(['jason', 'justin', 'dan']))
+
+// a = ['Saleo','demo','two', 'Layla'];
+// function returnLongestString(a) {
+//     let maxLength = 0;
+//     for (let i = 0; i < a.length; i++) {
+//         if (a[i].length > maxLength) {
+//         maxLength = a[i].length;
+//    }
+//   }
+//     const longestStrs = a.filter((str) => str.length === maxLength);
+
+//     return longestStrs;
+// }
+// console.log(returnLongestString(a))
+
+// function dayOfYear(dt) {
+//     const splitDate = dt.split("-").map(Number);
+//     return splitDate
+//     const daysInMonth = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+//     //check fo r leap year
+//     // if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+//     //     daysInMonth[2] = 29;
+//     // }
+
+//     // let dayOfYear = day;
+//     // for (let i= 1; i < month; i++) {
+//     //     dayOfYear += daysInMonth[i];
+//     // }
+//     // return dayOfYear;
+// }
+
+// console.log(dayOfYear("2022-05-24"))
+
+//find the missing ODD number
+function missingOddNum(arr) {
+    // let completeArr = [arr[0]];
+    // for (let i = 0; i < arr.length; i++) {
+    //     let value = completeArr[i] + 2;
+    //     completeArr.push(value)
+    // }
+    // return completeArr.filter((num) => !arr.includes(num))
+    let missingDigit = [];
+    for (let i = arr[0]; i <= arr.at(-1); i++) {
+        if (i % 2 !== 0 && !arr.includes(i)) {
+            missingDigit.push(i)
         }
-        results.push(counter);
-        }
-    return results;
- }
-    // const stringOccurences = strings.reduce(function (acc, string) {
-    // return acc[string]? acc[string]++ : acc[string] = 1, acc}, {});
+    }
+    return missingDigit
+}
 
-    // // for (let i = 0; i < queries.length; i++) {
-    // //     if (stringOccurences.hasOwnProperty(queries[i])) {
-    // //         results.push(stringOccurences[queries[i]])
-    // //     } else {
-    // //         results.push(0)
-    // //     }
-    // // }
-    // // return results
-
-    // return queries.reduce(function (acc, string) {
-    //     return stringOccurences.hasOwnProperty(string) ?
-    //         acc[string] = stringOccurences[string] : acc[string] = 0, acc}, [])
-
-const strings = ["ab", "ab", "abc"]
-const queries = ["ab", "abc", "ba"]
-console.log(matchingStrings(strings, queries))
+const arr = [5, 7, 11, 13, 15, 17]
+console.log(missingOddNum(arr))
